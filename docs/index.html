@@ -1,65 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Home</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/editormd.css" />
+    <title>demo</title>
 </head>
-
 <body>
-
-<div id="main">
-
-    <h1 class="page-title">Home</h1>
-
-    
-
-
-
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
+<div id="content">
+    <textarea class="culture" style="display:none;">
+<div class="article-entry" itemprop="articleBody">
+        <h3 id="生成抖音中的像素视频-视频转字符动画"><a href="#生成抖音中的像素视频-视频转字符动画" class="headerlink" title="生成抖音中的像素视频(视频转字符动画)"></a>生成抖音中的像素视频(视频转字符动画)</h3><blockquote>
+<p>以下还需要需要ffmpeg视频处理工具合成音频 <a href="https://blog.majiameng.com/ffmpeg.html">安装ffmpeg</a> |<br><a href="https://blog.majiameng.com/ffmpeg_basic.html">ffmpeg基本用法</a></p>
+</blockquote>
+<h6 id="引用类"><a href="#引用类" class="headerlink" title="引用类"></a>引用类</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.7 install numpy opencv-python Pillow</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os, cv2, subprocess, argparse</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFont, ImageDraw</span><br><span class="line"></span><br><span class="line"><span class="comment"># pip3.7 install numpy opencv-python Pillow</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令行输入参数处理</span></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">'file'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'-o'</span>, <span class="string">'--output'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'-f'</span>, <span class="string">'--fps'</span>, type=float, default=<span class="number">24</span>)  <span class="comment"># 帧</span></span><br><span class="line">parser.add_argument(<span class="string">'-s'</span>, <span class="string">'--save'</span>, type=bool, nargs=<span class="string">'?'</span>, default=<span class="keyword">False</span>, const=<span class="keyword">True</span>)  <span class="comment"># 是否保留Cache文件，默认不保存</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取参数</span></span><br><span class="line">args = parser.parse_args()</span><br><span class="line">INPUT = args.file</span><br><span class="line">OUTPUT = args.output</span><br><span class="line">FPS = args.fps</span><br><span class="line">SAVE = args.save</span><br></pre></td></tr></tbody></table></figure>
+          <a class="article-more-a" href="/python_char_video.html#more">more &gt;&gt;</a>
+    </div>
+    </textarea>
 </div>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../europa.js"></script>
+<script src="../editormd.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        //实例化
+        var editor = editormd("content", {
+            // width  : "100%",
+            height : "800px",
+            path   : "../lib/"
+        });
 
-<nav>
-    <h2><a href="index.html">Home</a></h2>
-</nav>
+        var content = "<div>修改的html</div><br><p>修改的p标签</p><br>";
+        var europa = new Europa();
+        var culture = document.getElementsByClassName('culture');
+        culture.value = europa.convert(content);
+        $('.culture').val(culture.value)
 
-<br class="clear">
+    });
+</script>
 
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a> on Mon Jun 08 2015 01:07:40 GMT+0800 (中国标准时间)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
 </body>
 </html>
